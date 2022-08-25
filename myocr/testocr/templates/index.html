@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script type="text/javascript">
+      // <![CDATA[
+      function loading() {
+        $("#loading").show();
+        $("#content").hide();
+      }
+      // ]]>
+    </script>
+    <title>God's Eye</title>
+
+    <style>
+      .heading {
+        color: #ffffff;
+      }
+
+      .page th {
+        background-color: #add8e6;
+        color: white;
+      }
+      body {
+
+        background-color: #cccccc;
+        height: 755px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      div#loading {
+        width: 1700px;
+        height: 35px;
+        display: none;
+
+        
+        cursor: wait;
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+      }
+
+      .center1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        color: black
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      {% csrf_token %}
+      <form method="POST" action="index.html" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button
+          type="submit"
+          class="btn btn-primary button_add"
+          style="
+            margin: auto;
+            display: block;
+            border-radius: 200px;
+            width: 90%;
+            height: 38rem;
+          "
+        >
+          <h1 class="heading center1"><b>Tap to Speak</b></h1>
+          <br />
+          <i class="fa fa-5x fa-microphone"></i>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
